@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/reader-app/static/css/main.46702921.chunk.css",
-    "main.js": "/reader-app/static/js/main.9b17c800.chunk.js",
-    "main.js.map": "/reader-app/static/js/main.9b17c800.chunk.js.map",
+    "main.js": "/reader-app/static/js/main.017558b2.chunk.js",
+    "main.js.map": "/reader-app/static/js/main.017558b2.chunk.js.map",
     "runtime-main.js": "/reader-app/static/js/runtime-main.378f4ace.js",
     "runtime-main.js.map": "/reader-app/static/js/runtime-main.378f4ace.js.map",
     "static/js/2.3aedb02f.chunk.js": "/reader-app/static/js/2.3aedb02f.chunk.js",
     "static/js/2.3aedb02f.chunk.js.map": "/reader-app/static/js/2.3aedb02f.chunk.js.map",
     "index.html": "/reader-app/index.html",
-    "precache-manifest.3a753fc99189c994a8db81609e24ae33.js": "/reader-app/precache-manifest.3a753fc99189c994a8db81609e24ae33.js",
+    "precache-manifest.f9d69409ad091d8e0718f7779067b73d.js": "/reader-app/precache-manifest.f9d69409ad091d8e0718f7779067b73d.js",
     "service-worker.js": "/reader-app/service-worker.js",
     "static/css/main.46702921.chunk.css.map": "/reader-app/static/css/main.46702921.chunk.css.map",
     "static/js/2.3aedb02f.chunk.js.LICENSE.txt": "/reader-app/static/js/2.3aedb02f.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.378f4ace.js",
     "static/js/2.3aedb02f.chunk.js",
     "static/css/main.46702921.chunk.css",
-    "static/js/main.9b17c800.chunk.js"
+    "static/js/main.017558b2.chunk.js"
   ]
 }
