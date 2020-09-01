@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/reader-app/static/css/main.46702921.chunk.css",
-    "main.js": "/reader-app/static/js/main.ab45ee47.chunk.js",
-    "main.js.map": "/reader-app/static/js/main.ab45ee47.chunk.js.map",
+    "main.js": "/reader-app/static/js/main.28e8a8a4.chunk.js",
+    "main.js.map": "/reader-app/static/js/main.28e8a8a4.chunk.js.map",
     "runtime-main.js": "/reader-app/static/js/runtime-main.378f4ace.js",
     "runtime-main.js.map": "/reader-app/static/js/runtime-main.378f4ace.js.map",
-    "static/js/2.3aedb02f.chunk.js": "/reader-app/static/js/2.3aedb02f.chunk.js",
-    "static/js/2.3aedb02f.chunk.js.map": "/reader-app/static/js/2.3aedb02f.chunk.js.map",
+    "static/js/2.6f1202ca.chunk.js": "/reader-app/static/js/2.6f1202ca.chunk.js",
+    "static/js/2.6f1202ca.chunk.js.map": "/reader-app/static/js/2.6f1202ca.chunk.js.map",
     "index.html": "/reader-app/index.html",
-    "precache-manifest.ca1f759de41e80ef41c26f35e61c5a56.js": "/reader-app/precache-manifest.ca1f759de41e80ef41c26f35e61c5a56.js",
+    "precache-manifest.22f1e872785c34f745a8718e9137e545.js": "/reader-app/precache-manifest.22f1e872785c34f745a8718e9137e545.js",
     "service-worker.js": "/reader-app/service-worker.js",
     "static/css/main.46702921.chunk.css.map": "/reader-app/static/css/main.46702921.chunk.css.map",
-    "static/js/2.3aedb02f.chunk.js.LICENSE.txt": "/reader-app/static/js/2.3aedb02f.chunk.js.LICENSE.txt"
+    "static/js/2.6f1202ca.chunk.js.LICENSE.txt": "/reader-app/static/js/2.6f1202ca.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.378f4ace.js",
-    "static/js/2.3aedb02f.chunk.js",
+    "static/js/2.6f1202ca.chunk.js",
     "static/css/main.46702921.chunk.css",
-    "static/js/main.ab45ee47.chunk.js"
+    "static/js/main.28e8a8a4.chunk.js"
   ]
 }
