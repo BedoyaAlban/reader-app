@@ -1,8 +1,15 @@
+import alanBtn from "@alan-ai/alan-sdk-web";
 import React from "react";
 import "./App.css";
 import logo from "./logo.svg";
 
-function App() {
+const App = () => {
+  alanBtn({
+    key:
+      "b971eb17fb7af4e13158c416974f8c852e956eca572e1d8b807a3e2338fdd0dc/stage",
+    rootEl: document.getElementById("alan-btn")
+  });
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,9 +25,10 @@ function App() {
         >
           Learn React
         </a>
+        <div className="alan-btn"></div>
       </header>
     </div>
   );
-}
+};
 
 export default App;
