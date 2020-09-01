@@ -7,19 +7,21 @@ import React, { useState } from "react";
 const useStyles = makeStyles(theme => ({
   paper: {
     position: "absolute",
-    width: 600,
     backgroundColor: theme.palette.background.paper,
     border: "2px solid #000",
     textAlign: "center",
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.up("xs")]: {
       width: "270px",
       padding: theme.spacing(0, 0, 0)
     },
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.up("sm")]: {
       width: "400px",
       padding: theme.spacing(0, 0, 0)
+    },
+    [theme.breakpoints.up("md")]: {
+      width: 600,
+      padding: theme.spacing(2, 4, 3)
     }
   },
   root: {
@@ -31,16 +33,21 @@ const useStyles = makeStyles(theme => ({
     padding: "10px",
     borderRadius: 10,
     color: "white",
+    [theme.breakpoints.down("sm")]: {
+      display: "none"
+    },
     "& > *": {
-      margin: theme.spacing(1),
-      width: theme.spacing(24),
-      height: theme.spacing(30),
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.up("md")]: {
         margin: theme.spacing(1),
-        width: theme.spacing(28),
-        height: theme.spacing(17)
+        width: theme.spacing(24),
+        height: theme.spacing(30)
       },
-      [theme.breakpoints.down("md")]: {
+      [theme.breakpoints.up("xs")]: {
+        margin: theme.spacing(1),
+        width: theme.spacing(29),
+        height: theme.spacing(15)
+      },
+      [theme.breakpoints.up("sm")]: {
         margin: theme.spacing(1),
         width: theme.spacing(44),
         height: theme.spacing(17)
@@ -52,17 +59,17 @@ const useStyles = makeStyles(theme => ({
     fontWeight: "bold",
     margin: "10px",
     color: "white",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.up("xs")]: {
       margin: "2px"
     }
   },
   title: {
     textTransform: "uppercase",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.up("xs")]: {
       textTransform: "none",
       fontSize: "20px"
     },
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.up("sm")]: {
       fontSize: "30px",
       textTransform: "uppercase"
     }
