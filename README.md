@@ -6,7 +6,7 @@ This app was made with:
 
 ## Alan API
 
-![Alan](https://studio.alan.app/web/src/assets/images/alanstudio-app.svg?cbh=5b5cda022a50a93c9dd258ff38a0ae00)
+![Alan](./public/favicon.ico)
 
 ## News API
 
