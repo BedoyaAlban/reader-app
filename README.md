@@ -1,68 +1,246 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Reader App
 
-## Available Scripts
+An vocal assistant to help you making research without your keyboard!
 
-In the project directory, you can run:
+This app was made with:
 
-### `yarn start`
+## Alan API
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[![Alan](https://alan.app/)]
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## News API
 
-### `yarn test`
+[![NewsAPI](https://newsapi.org/)]
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## React
 
-### `yarn build`
+[![React](https://reactjs.org/)][<img align="left" alt="react" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" />]
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### How to use it
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+You can see a demo -> [Reader-App](http://bedoyaalban.github.io/reader-app)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Install dependencies
 
-### `yarn eject`
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Create an News API account
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Go to [![NewsAPI](https://newsapi.org/)] and create an account for free.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Create an Alan account
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Go to [![Alan](https://alan.app/)]] and create an account for free.
 
-## Learn More
+& create a new project.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Use your key-app
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Replace in the file App.js the alanKey by yours.
 
-### Code Splitting
+## Scripts
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Get your NewsApi Key and copy this code to your new project.
 
-### Analyzing the Bundle Size
+```javascript
+// Use this sample to create your own voice commands
+intent(
+  "What does this app do?",
+  "What can I do here?",
+  reply("This is a news project")
+);
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+intent("Hello", p => {
+  p.play(
+    "Welcome to the reader App! I am Alan your host. if you wanna know how to use the App say "
+  );
+  p.play("instructions");
+});
 
-### Making a Progressive Web App
+const instr = [
+  {
+    id: 1,
+    title: "Make any research",
+    content: "Follow the instructions displayed on the CARDS"
+  },
+  { id: 2, title: "Make a new research", content: "Say: GO BACK" },
+  {
+    id: 3,
+    title: "Open an article",
+    content: "Say: OPEN and the NUMBER of the article at the bottom right"
+  },
+  {
+    id: 4,
+    title: "Interact with me",
+    content: "You just have to press the BUTTON at the top right of this page"
+  }
+];
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+intent("Instructions", p => {
+  p.play({ command: "instructions" });
+  p.play("Would you like me to read the instructions");
+  p.then(confirmInstructions);
+});
 
-### Advanced Configuration
+const confirmInstructions = context(() => {
+  intent("please (yes|) (sure|)", async p => {
+    for (let i = 0; i < instr.length; i++) {
+      p.play({ command: "read", instr });
+      p.play(`${instr[i].title}`);
+      p.play(`${instr[i].content}`);
+    }
+  });
+  intent("no", p => {
+    p.play("Sure, sounds good to me.");
+  });
+});
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+const API_KEY = { NewsAPIKey };
+let savedArticles = [];
 
-### Deployment
+// News by source
+intent("Give me the news from $(source* (.*))", p => {
+  let NEWS_API_URL = `https://newsapi.org/v2/top-headlines?apiKey=${API_KEY}`;
+  if (p.source.value) {
+    NEWS_API_URL = `${NEWS_API_URL}&sources=${p.source.value
+      .toLowerCase()
+      .split(" ")
+      .join("-")}`;
+  }
+  api.request(NEWS_API_URL, (error, response, body) => {
+    const { articles } = JSON.parse(body);
+    if (!articles.length) {
+      p.play("Sorry, please try searching for news from a different source");
+      return;
+    }
+    savedArticles = articles;
+    p.play({ command: "newHeadlines", articles });
+    p.play(`Here are the (latest|recent) ${p.source.value}`);
+    p.play("Would you like me to read the headlines?");
+    p.then(confirmation);
+  });
+});
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+// News by domain
+intent("Can I have the news from $(source* (.*))", p => {
+  let NEWS_API_URL = `https://newsapi.org/v2/everything?apiKey=${API_KEY}`;
+  if (p.source.value === "Zone") {
+    NEWS_API_URL = `${NEWS_API_URL}&domains=dzone.com&language=en`;
+  }
+  if (p.source.value) {
+    NEWS_API_URL = `${NEWS_API_URL}&domains=${p.source.value
+      .toLocaleLowerCase()
+      .replace(/\s+/g, "")}.com&language=en`;
+  }
+  api.request(NEWS_API_URL, (error, response, body) => {
+    const { articles } = JSON.parse(body);
+    if (!articles.length) {
+      p.play("Sorry, please try searching for news from a different source");
+      return;
+    }
+    savedArticles = articles;
+    p.play({ command: "newHeadlines", articles });
+    p.play(`Here are the (latest|recent) ${p.source.value}`);
+    p.play("Would you like me to read the headlines?");
+    p.then(confirmation);
+  });
+});
 
-### `yarn build` fails to minify
+// News by term
+intent("What's up with $(term* (.*))", p => {
+  let NEWS_API_URL = `https://newsapi.org/v2/everything?apiKey=${API_KEY}`;
+  if (p.term.value) {
+    NEWS_API_URL = `${NEWS_API_URL}&q=${p.term.value}`;
+  }
+  api.request(NEWS_API_URL, (error, response, body) => {
+    const { articles } = JSON.parse(body);
+    if (!articles.length) {
+      p.play("Sorry, please try searching for something else");
+      return;
+    }
+    savedArticles = articles;
+    p.play({ command: "newHeadlines", articles });
+    p.play(`Here are the (latest|recent) ${p.term.value}`);
+    p.play("Would you like me to read the headlines?");
+    p.then(confirmation);
+  });
+});
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+// News by Categories
+const CATEGORIES = [
+  "business",
+  "entertainment",
+  "general",
+  "health",
+  "science",
+  "sports",
+  "technology"
+];
+const CATEGORIES_INTENT = `${CATEGORIES.map(
+  category => `${category}~${category}`
+).join("|")}|`;
+
+intent(
+  `(show|what is|tell me|what's|what are|what're|read) (the|) (recent|latest|) $(N news|headlines) (in|about|on|) $(C~ ${CATEGORIES_INTENT})`,
+  `(read|show|get|bring me|give me) (the|) (recent|latest) $(C~ ${CATEGORIES_INTENT}) $(N news|headlines)`,
+  p => {
+    let NEWS_API_URL = `https://newsapi.org/v2/top-headlines?apiKey=${API_KEY}&country=us`;
+    if (p.C.value) {
+      NEWS_API_URL = `${NEWS_API_URL}&category=${p.C.value}`;
+    }
+    api.request(NEWS_API_URL, (error, response, body) => {
+      const { articles } = JSON.parse(body);
+      if (!articles.length) {
+        p.play("Sorry, please try searching for a different category.");
+        return;
+      }
+      savedArticles = articles;
+      p.play({ command: "newHeadlines", articles });
+      if (p.C.value) {
+        p.play(`Here are the (latest|recent) articles on ${p.C.value}.`);
+      } else {
+        p.play(`Here are the (latest|recent) news`);
+      }
+      p.play("Would you like me to read the headlines?");
+      p.then(confirmation);
+    });
+  }
+);
+
+const confirmation = context(() => {
+  intent("yes (sure|) (please|)", async p => {
+    for (let i = 0; i < savedArticles.length; i++) {
+      p.play({ command: "highlight", article: savedArticles[i] });
+      p.play(`${savedArticles[i].title}`);
+    }
+  });
+  intent("no", p => {
+    p.play("Sure, sounds good to me.");
+  });
+});
+
+intent("open (the|) (article|) (number|) $(number* (.*))", p => {
+  if (p.number.value) {
+    p.play({
+      command: "open",
+      number: p.number.value,
+      articles: savedArticles
+    });
+  }
+});
+
+intent("(go|) back", p => {
+  p.play("Sure, going back");
+  p.play({ command: "newHeadlines", articles: [] });
+});
+```
+
+## Installation `npm i`
+
+## Build `npm build`
+
+## Test `npm test`
+
+## Deploy `npm run build`
+
+Replace the homepage in package.json file by your git repository
