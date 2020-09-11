@@ -28,11 +28,11 @@ npm install
 
 ## Create an News API account
 
-Go to <a href="https://newsapi.org"><img src="./images/news-api.png" width="70" height="40"></a> and create an account for free.
+Go to <a href="https://newsapi.org"><img src="./images/news-api.png" width="100%"></a> and create an account for free.
 
 ## Create an Alan account
 
-Go to <a href="https://alan.app/"><img src="./images/AlanStudio-app.svg" width="46" height="40"></a> and create an account for free.
+Go to <a href="https://alan.app/"><img src="./images/AlanStudio-app.svg" width="100%"></a> and create an account for free.
 
 & create a new project.
 
