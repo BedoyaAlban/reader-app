@@ -17,7 +17,7 @@ This app was made with:
 ## React
 
 <a href="https://reactjs.org/">
-<img src="./images/react.svg"></a>
+<img src="./images/react.svg" width="50px" height="50px"></a>
 
 ### How to use it
 
