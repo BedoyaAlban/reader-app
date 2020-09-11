@@ -1,6 +1,6 @@
 # Reader App
 
-An vocal assistant to help you making research without your keyboard!
+A vocal assistant to help you making research without your keyboard!
 
 This app was made with:
 
@@ -25,7 +25,7 @@ You can see a demo -> [Reader-App](http://bedoyaalban.github.io/reader-app)
 
 ## Install dependencies
 
-`npm instal`
+`npm install` Install all the dependencies
 
 ## Create an News API account
 
@@ -102,7 +102,7 @@ const confirmInstructions = context(() => {
   });
 });
 
-const API_KEY = { NewsAPIKey };
+const API_KEY = "your News API Key";
 let savedArticles = [];
 
 // News by source
@@ -242,12 +242,22 @@ intent("(go|) back", p => {
 });
 ```
 
-## Installation `npm i`
+## Dev `npm start`
+
+On localhost:3000 you can see the app.
 
 ## Build `npm build`
 
-## Test `npm test`
+Create a build folder so you can deploy the app on
+your favorite host!
 
-## Deploy `npm run build`
+## Deploy `npm run build` using Github pages
 
-Replace the homepage in package.json file by your git repository
+Replace the homepage in package.json file by your github username
+
+```javascript
+{}package.json
+{
+    "homepage": "http://{github-username}.github.io/reader-app"
+}
+```
