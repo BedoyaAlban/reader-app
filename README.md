@@ -6,7 +6,7 @@ This app was made with:
 
 ## Alan API
 
-[![Alan](https://alan.app/)]
+[![Alan](https://alan.app/)][<img align="left" alt="react" width="26px" src="https://studio.alan.app/web/src/assets/images/alanstudio-app.svg?cbh=5b5cda022a50a93c9dd258ff38a0ae00" />]
 
 ## News API
 
@@ -244,3 +244,5 @@ intent("(go|) back", p => {
 ## Deploy `npm run build`
 
 Replace the homepage in package.json file by your git repository
+
+[Alan](https://alan.app/)
