@@ -27,7 +27,7 @@ You can see a demo -> [Reader-App](http://bedoyaalban.github.io/reader-app)
 
 `npm install` Install all the dependencies
 
-## Create an News API account
+## Create a News API account
 
 Go to <a href="https://newsapi.org"><img src="./images/news-api.png" width="20px" height="20px"></a> and create an account for free.
 
@@ -35,7 +35,7 @@ Go to <a href="https://newsapi.org"><img src="./images/news-api.png" width="20px
 
 Go to <a href="https://alan.app/"><img src="./images/AlanStudio-app.svg" width="20px" height="20px"></a> and create an account for free.
 
-& create a new project.
+& create a New Vocal Assistant, and select Empty Project.
 
 ## Use your key-app
 
@@ -47,7 +47,7 @@ const alanKey = "your Alan API Key";
 
 ## Scripts
 
-Get your NewsApi Key and copy this code to your new project.
+Get your NewsApi Key and copy this code to your new project (Empty project) in the vocal assistant [Alan-Studio](https://studio.alan.app).
 
 ```javascript
 // Use this sample to create your own voice commands
