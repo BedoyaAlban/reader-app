@@ -12,11 +12,11 @@ This app was made with:
 ## News API
 
 <a href="https://newsapi.org">
-<img src="./images/news-api.png" width="46" height="40"></a>
+<img src="./images/news-api.png" width="70" height="40"></a>
 
 ## React
 
-[React](https://reactjs.org/)[<img align="left" alt="react" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" />]
+[React](https://reactjs.org/)
 
 ### How to use it
 
@@ -28,11 +28,11 @@ npm install
 
 ## Create an News API account
 
-Go to [![NewsAPI](https://newsapi.org/)] and create an account for free.
+Go to <a href="https://newsapi.org"><img src="./images/news-api.png" width="70" height="40"></a> and create an account for free.
 
 ## Create an Alan account
 
-Go to [![Alan](./images/AlanStudio-app.svg)(https://alan.app/)]] and create an account for free.
+Go to <a href="https://alan.app/"><img src="./images/AlanStudio-app.svg" width="46" height="40"></a> and create an account for free.
 
 & create a new project.
 
