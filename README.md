@@ -6,15 +6,13 @@ This app was made with:
 
 ## Alan API
 
-![Alan](./images/AlanStudio-app.svg)
-
-[Alan API](https://alan.app/)
+<a href="https://alan.app/">
+<img src="./images/AlanStudio-app.svg" width="46" height="40"></a>
 
 ## News API
 
-![NewsAPI](./images/news-api.png)
-
-[News API](https://newsapi.org)
+<a href="https://newsapi.org">
+<img src="./images/news-api.png" width="46" height="40"></a>
 
 ## React
 
@@ -34,7 +32,7 @@ Go to [![NewsAPI](https://newsapi.org/)] and create an account for free.
 
 ## Create an Alan account
 
-Go to [![Alan](https://alan.app/)]] and create an account for free.
+Go to [![Alan](./images/AlanStudio-app.svg)(https://alan.app/)]] and create an account for free.
 
 & create a new project.
 
