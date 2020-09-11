@@ -6,11 +6,11 @@ This app was made with:
 
 ## Alan API
 
-[Alan](./images/AlanStudio-app.svg) [Alan API](https://alan.app/)
+![Alan](./images/AlanStudio-app.svg) [Alan API](https://alan.app/)
 
 ## News API
 
-[NewsAPI](./images/news-api.png) [News API](https://newsapi.org)
+![NewsAPI](./images/news-api.png) [News API](https://newsapi.org)
 
 ## React
 
