@@ -25,7 +25,7 @@ You can see a demo -> [Reader-App](http://bedoyaalban.github.io/reader-app)
 
 ## Install dependencies
 
-npm install
+`npm instal`
 
 ## Create an News API account
 
@@ -39,7 +39,11 @@ Go to <a href="https://alan.app/"><img src="./images/AlanStudio-app.svg" width="
 
 ## Use your key-app
 
-Replace in the file App.js the alanKey by yours.
+Replace in the file ./src/App.js the alanKey by yours.
+
+```javascript
+const alanKey = "your Alan API Key";
+```
 
 ## Scripts
 
