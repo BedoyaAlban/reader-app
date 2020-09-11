@@ -6,7 +6,7 @@ This app was made with:
 
 ## Alan API
 
-[![Alan](https://alan.app/)][<img align="left" alt="react" width="26px" src="https://studio.alan.app/web/src/assets/images/alanstudio-app.svg?cbh=5b5cda022a50a93c9dd258ff38a0ae00" />]
+![Alan](https://studio.alan.app/web/src/assets/images/alanstudio-app.svg?cbh=5b5cda022a50a93c9dd258ff38a0ae00)
 
 ## News API
 
@@ -14,7 +14,7 @@ This app was made with:
 
 ## React
 
-[![React](https://reactjs.org/)][<img align="left" alt="react" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" />]
+[React](https://reactjs.org/)[<img align="left" alt="react" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" />]
 
 ### How to use it
 
@@ -244,5 +244,3 @@ intent("(go|) back", p => {
 ## Deploy `npm run build`
 
 Replace the homepage in package.json file by your git repository
-
-[Alan](https://alan.app/)
